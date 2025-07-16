@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <form action="#" method="post">
+            
+            <fieldset>
+                <legend>Basic Info</legend>
+                <div class="form-row">
+                    <label class="field-label" for="employeeId">Employee ID</label>
+                    <div class="input-container">
+                        <input type="text" id="employeeId" name="employeeId" value="9" readonly>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label class="field-label" for="lastName">Last Name</label>
+                    <div class="input-container">
+                        <input type="text" id="lastName" name="lastName" value="Dodsworth">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label class="field-label required-label" for="firstName">First Name</label>
+                    <div class="input-container">
+                        <input type="text" id="firstName" name="firstName" value="Anne">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label class="field-label">Gender</label>
+                    <div class="input-container radio-group">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                        <input type="radio" id="xxx" name="gender" value="xxx">
+                        <label for="xxx">XXX</label>
+                        <input type="radio" id="zzz" name="gender" value="zzz" checked>
+                        <label for="zzz">ZZZ</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label class="field-label" for="title">Title</label>
+                    <div class="input-container">
+                        <input type="text" id="title" name="title" value="Sales Representative">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label class="field-label" for="suffix">Suffix</label>
+                    <div class="input-container">
+                        <input type="text" id="suffix" name="suffix" value="Ms.">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label class="field-label" for="birthDate">BirthDate</label>
+                    <div class="input-container">
+                        <input type="text" id="birthDate" name="birthDate" value="1969-07-02 00:00:00">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label class="field-label" for="hireDate">HireDate</label>
+                    <div class="input-container">
+                        <input type="text" id="hireDate" name="hireDate" value="1994-11-15 00:00:00">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label class="field-label" for="ssn">SSN # (if applicable)</label>
+                    <div class="input-container">
+                        <input type="text" id="ssn" name="ssn">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label class="field-label" for="reportsTo">Reports To</label>
+                    <div class="input-container">
+                        <select id="reportsTo" name="reportsTo">
+                            <option value="buchanan" selected>Buchanan</option>
+                            <option value="davolio">Davolio</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Contact Info</legend>
+                 <div class="form-row">
+                    <label class="field-label" for="email">Email</label>
+                    <div class="input-container">
+                        <input type="email" id="email" name="email" value="name@example.com">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label class="field-label" for="address">Address</label>
+                    <div class="input-container">
+                        <input type="text" id="address" name="address" value="7 Houndstooth Rd.">
+                    </div>
+                </div>
+                 <div class="form-row">
+                    <label class="field-label" for="city">City</label>
+                    <div class="input-container">
+                        <input type="text" id="city" name="city" value="London">
+                    </div>
+                </div>
+                 <div class="form-row">
+                    <label class="field-label" for="region">Region</label>
+                    <div class="input-container">
+                        <input type="text" id="region" name="region">
+                    </div>
+                </div>
+                 <div class="form-row">
+                    <label class="field-label" for="postalCode">Postal Code</label>
+                    <div class="input-container">
+                        <input type="text" id="postalCode" name="postalCode" value="WG2 7LT">
+                    </div>
+                </div>
+                 <div class="form-row">
+                    <label class="field-label" for="country">Country</label>
+                    <div class="input-container">
+                         <select id="country" name="country">
+                            <option value="russian_federation" selected>Russian Federation</option>
+                            <option value="united_kingdom">United Kingdom</option>
+                            <option value="usa">USA</option>
+                        </select>
+                    </div>
+                </div>
+                 <div class="form-row">
+                    <label class="field-label" for="homePhone">US Home Phone</label>
+                    <div class="input-container">
+                        <input type="tel" id="homePhone" name="homePhone" value="(234)234-2342">
+                    </div>
+                </div>
+                 <div class="form-row">
+                    <label class="field-label" for="photo">Photo</label>
+                    <div class="input-container">
+                        <input type="text" id="photo" name="photo" value="EmpID9.bmp">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Optional Info</legend>
+                <div class="form-row">
+                    <label class="field-label" for="notes">Notes</label>
+                    <div class="input-container">
+                        <div class="rich-text-placeholder">
+                            <p>B I U ... (Toolbar Placeholder)</p>
+                            <textarea id="notes" name="notes">Anne has a BA degree in English from St. Lawrence College. She is fluent in French and German.ZZZ</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label class="field-label">Preferred Shift</label>
+                    <div class="input-container checkbox-group">
+                        <input type="checkbox" id="regular" name="shift" value="regular">
+                        <label for="regular">Regular</label>
+                        <input type="checkbox" id="gravyYard" name="shift" value="gravyYard" checked>
+                        <label for="gravyYard">Gravy Yard</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label class="field-label">Active?</label>
+                    <div class="input-container checkbox-group">
+                        <input type="checkbox" id="active" name="active" checked>
+                    </div>
+                </div>
+                 <div class="form-row">
+                    <label class="field-label">Are you human?</label>
+                    <div class="input-container">
+                        <div class="captcha-placeholder">
+                            <p>T I D A W O <a href="#">Click to change</a></p>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            
+    <div class="form-footer">
+            <div class="footer-left">
+                <button type="button" class="arrow-btn">◀</button>
+                <button type="button" class="arrow-btn">▶</button>
+                <span class="required-note">* required</span>
+            </div>
+
+            <div class="form-buttons">
+                <button type="submit" id="submit-btn">
+                    ✔️ Submit
+                </button>
+                <button type="button" id="cancel-btn">
+                    ❌ Cancel
+                </button>
+            </div>
+        </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
