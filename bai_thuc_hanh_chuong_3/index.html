@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Thực Hành Chương 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Form Thêm Sinh Viên Mới</h2>
+    <form>
+        <div>
+            <label for="maSV">Mã sinh viên:</label>
+            <input type="text" id="maSV" name="maSV" required>
+        </div>
+        <div>
+            <label for="hoTen">Họ và tên:</label>
+            <input type="text" id="hoTen" name="hoTen" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="ngaySinh">Ngày sinh:</label>
+            <input type="date" id="ngaySinh" name="ngaySinh">
+        </div>
+        <div class="radio-group">
+            <label>Giới tính:</label>
+            <label for="nam"><input type="radio" id="nam" name="gioiTinh" value="Nam"> Nam</label>
+            <label for="nu"><input type="radio" id="nu" name="gioiTinh" value="Nữ"> Nữ</label>
+        </div>
+        <div>
+            <label for="ghiChu">Ghi chú:</label>
+            <textarea id="ghiChu" name="ghiChu" rows="4"></textarea>
+        </div>
+        <div>
+            <button type="submit">Thêm sinh viên</button>
+        </div>
+    </form>
+
+    <hr>
+
+    <h2>Bảng Danh Sách Sinh Viên</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Mã SV</th>
+                <th>Họ tên</th>
+                <th>Email</th>
+                <th>Giới tính</th>
+                <th>Ngày sinh</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>20210001</td>
+                <td>Nguyễn Văn An</td>
+                <td>an.nv@gmail.com</td>
+                <td>Nam</td>
+                <td>15/05/2003</td>
+                <td>
+                    <a href="#">Sửa</a>
+                    <a href="#">Xoá</a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>20210002</td>
+                <td>Nghiem Quang Sang</td>
+                <td>sang.nq@gmail.com</td>
+                <td>Nam</td>
+                <td>31/12/2002</td>
+                <td>
+                    <a href="#">Sửa</a>
+                    <a href="#">Xoá</a>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>20210003</td>
+                <td>Lê Văn Cường</td>
+                <td>cuong.lv@gmail.com</td>
+                <td>Nam</td>
+                <td>01/01/2003</td>
+                <td>
+                    <a href="#">Sửa</a>
+                    <a href="#">Xoá</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
