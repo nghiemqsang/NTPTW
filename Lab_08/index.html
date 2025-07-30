@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý giao dịch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-left">
+            <span>Trường Đại học Thủy Lợi</span>
+        </div>
+        <div class="header-right">
+            <a href="#">Trang chủ</a>
+            <a href="#">Quản lý cửa hàng</a>
+            <div class="search-container">
+                <input type="text" placeholder="Nhập nội dung tìm kiếm">
+                <button>TÌM KIẾM</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-fluid my-3">
+        <div class="controls-bar">
+            <div class="controls-left">
+                <button id="show-modal-btn" class="btn btn-primary btn-sm"><i class="bi bi-plus-circle"></i> THÊM</button>
+                <button class="btn btn-secondary btn-sm">XUẤT RA FILE</button>
+            </div>
+            <div class="controls-center">
+                <div class="custom-search-group">
+                    <button class="btn btn-light btn-sm"><i class="bi bi-chevron-right"></i></button>
+                    <input type="text" class="form-control form-control-sm" placeholder="Tìm kiếm giao dịch">
+                    <button class="btn btn-light btn-sm"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+            <div class="controls-right">
+                <span>Kết quả</span>
+                <select class="form-select form-select-sm">
+                    <option selected>5</option>
+                    <option>10</option>
+                    <option>20</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="table-container mt-2">
+            <table class="table table-bordered table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th>×</th>
+                        <th>Hành động</th>
+                        <th>ID</th>
+                        <th>
+                            <div class="sortable-header">
+                                <div class="sort-arrows">
+                                    <i class="bi bi-caret-up-fill"></i>
+                                    <i class="bi bi-caret-down-fill"></i>
+                                </div>
+                                <span>Khách hàng</span>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="sortable-header">
+                                <div class="sort-arrows">
+                                    <i class="bi bi-caret-up-fill"></i>
+                                    <i class="bi bi-caret-down-fill"></i>
+                                </div>
+                                <span>Nhân viên</span>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="sortable-header">
+                                <div class="sort-arrows">
+                                    <i class="bi bi-caret-up-fill"></i>
+                                    <i class="bi bi-caret-down-fill"></i>
+                                </div>
+                                <span>Số tiền</span>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="sortable-header">
+                                <div class="sort-arrows">
+                                    <i class="bi bi-caret-up-fill"></i>
+                                    <i class="bi bi-caret-down-fill"></i>
+                                </div>
+                                <span>Ngày mua</span>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="transaction-table-body">
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Bắt đầu phần footer của bảng đã được sửa đổi -->
+        <div class="table-footer-wrapper mt-2">
+            <div class="table-footer-row">
+                <button class="btn btn-danger btn-sm btn-delete-records"><i class="bi bi-trash"></i> DELETE SELECTED RECORDS</button>
+            </div>
+            <div class="table-footer-row">
+                <div class="custom-pagination">
+                    <span>Trang</span>
+                    <a href="#" class="page-number active">1</a>
+                    <a href="#" class="page-number">2</a>
+                    <a href="#" class="page-number">3</a>
+                    <a href="#" class="page-number">4</a>
+                    <a href="#" class="page-number">5</a>
+                    <a href="#" class="page-number">6</a>
+                    <a href="#" class="page-arrow">&gt;</a>
+                    <a href="#" class="page-arrow">&raquo;</a>
+                </div>
+                <div class="footer-right">
+                    <span>Kết quả 1 trong 20 trang</span>
+                </div>
+            </div>
+        </div>
+        <!-- Kết thúc phần footer của bảng -->
+    </main>
+
+    <footer class="main-footer">
+        <div>TRƯỜNG ĐẠI HỌC THỦY LỢI</div>
+        <p>Địa chỉ: 175 Tây Sơn, Đống Đa, Hà Nội</p>
+        <p>Điện thoại: (024) 38522201 - Fax: (024) 35633351</p>
+    </footer>
+
+    <div id="add-transaction-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Thêm giao dịch</h2>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="add-transaction-form">
+                    <div class="form-group">
+                        <label for="customer-name">Khách hàng</label>
+                        <input type="text" id="customer-name" required>
+                        <div class="error-message" id="customer-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="employee-name">Nhân viên</label>
+                        <input type="text" id="employee-name" required>
+                        <div class="error-message" id="employee-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Số tiền</label>
+                        <input type="number" id="amount" required>
+                        <div class="error-message" id="amount-error"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close-modal-btn">Hủy</button>
+                        <button type="submit" class="btn btn-success">Thêm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
