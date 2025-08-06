@@ -1,0 +1,63 @@
+.book-list {
+  margin-top: 20px;
+}
+
+.book-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Đây là phần quan trọng nhất */
+.book-list li {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px; /* Tạo khoảng cách giữa các sách */
+  border-radius: 5px;
+  
+  /* Các thuộc tính giúp sắp xếp nội dung bên trong li */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-details {
+  text-align: left;
+}
+
+.book-title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.book-author {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 5px;
+}
+
+.book-actions button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
